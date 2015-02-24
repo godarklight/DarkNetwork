@@ -1,0 +1,9 @@
+*.orig
+*.dll
+*.userprefs
+DarkNetwork/bin/*
+DarkNetwork/obj/*
+DarkNetworkTester/bin/*
+DarkNetworkTester/obj/*
+*.suo
+*.csproj.user

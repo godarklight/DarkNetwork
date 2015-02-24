@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DarkNetwork", "DarkNetwork\DarkNetwork.csproj", "{F756FA61-804C-460C-ACB7-7E129225D006}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DarkNetworkTester", "DarkNetworkTester\DarkNetworkTester.csproj", "{CCB40682-44A1-4AAC-8E23-23F3A3D5C83A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CCB40682-44A1-4AAC-8E23-23F3A3D5C83A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCB40682-44A1-4AAC-8E23-23F3A3D5C83A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCB40682-44A1-4AAC-8E23-23F3A3D5C83A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCB40682-44A1-4AAC-8E23-23F3A3D5C83A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F756FA61-804C-460C-ACB7-7E129225D006}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F756FA61-804C-460C-ACB7-7E129225D006}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F756FA61-804C-460C-ACB7-7E129225D006}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F756FA61-804C-460C-ACB7-7E129225D006}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = DarkNetworkTester\DarkNetworkTester.csproj
+	EndGlobalSection
+EndGlobal
