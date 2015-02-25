@@ -26,7 +26,7 @@ namespace DarkNetworkTester
             Thread.Sleep(100);
             NetworkClient<TrackingObject> networkClient4 = mainClass.Run();
             //Shutup compiler.
-            networkClient3.Equals(null);
+            networkClient4.Equals(null);
             Thread.Sleep(100);
             byte[] messageBytes = new byte[8];
             BitConverter.GetBytes(9000).CopyTo(messageBytes, 0);

@@ -366,6 +366,7 @@ namespace DarkNetwork
             {
                 if (tcpClient != null)
                 {
+                    handler.FireDisconnectCallback(this, disconnectException);
                     tcpClient.Close();
                     tcpClient = null;
                     are.Set();
@@ -373,7 +374,6 @@ namespace DarkNetwork
                     {
                         networkServer.RemoveNetworkClient(this);
                     }
-                    handler.FireDisconnectCallback(this, disconnectException);
                 }
             }
         }
