@@ -9,7 +9,11 @@ namespace DarkNetwork
     {
         private TcpListener tcpListener;
         private List<NetworkClient<T>> clients = new List<NetworkClient<T>>();
-        private NetworkHandler<T> networkHandler;
+        internal NetworkHandler<T> networkHandler
+        {
+            private set;
+            get;
+        }
         private bool littleEndian;
         public int ConnectCount
         {
@@ -53,8 +57,10 @@ namespace DarkNetwork
         {
             lock (clients)
             {
-                if (!clients.Contains(client))
+                if (!clients.Contains(client) && client.networkServer == null)
                 {
+                    client.networkServer = this;
+                    client.handler = networkHandler;
                     clients.Add(client);
                 }
             }
@@ -67,6 +73,7 @@ namespace DarkNetwork
                 if (clients.Contains(client))
                 {
                     clients.Remove(client);
+                    client.networkServer = null;
                 }
             }
         }
@@ -78,6 +85,20 @@ namespace DarkNetwork
                 foreach (NetworkClient<T> client in clients)
                 {
                     client.QueueNetworkMessage(networkMessage);
+                }
+            }
+        }
+
+        public void QueueToOthers(NetworkClient<T> excludeClient, NetworkMessage networkMessage)
+        {
+            lock (clients)
+            {
+                foreach (NetworkClient<T> client in clients)
+                {
+                    if (client != excludeClient)
+                    {
+                        client.QueueNetworkMessage(networkMessage);
+                    }
                 }
             }
         }

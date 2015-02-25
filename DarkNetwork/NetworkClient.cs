@@ -13,9 +13,9 @@ namespace DarkNetwork
         public static int MAX_MESSAGE_SIZE = 10000000;
         public T stateObject;
         //Server tracking
-        private NetworkServer<T> networkServer;
+        internal NetworkServer<T> networkServer;
         //Connection state
-        private NetworkHandler<T> handler;
+        internal NetworkHandler<T> handler;
         private TcpClient tcpClient;
         private object disconnectLock = new object();
         private bool isLittleEndian;
@@ -340,19 +340,24 @@ namespace DarkNetwork
             }
         }
 
+        public void TransferToServer(NetworkServer<T> networkServer)
+        {
+            lock (disconnectLock)
+            {
+                if (tcpClient != null)
+                {
+                    if (networkServer != null)
+                    {
+                        networkServer.RemoveNetworkClient(this);
+                    }
+                    networkServer.AddNetworkClient(this);
+                }
+            }
+        }
+
         public void Disconnect()
         {
             Disconnect(null);
-        }
-
-        public void TransferToServer(NetworkServer<T> networkServer)
-        {
-            if (networkServer != null)
-            {
-                networkServer.RemoveNetworkClient(this);
-            }
-            this.networkServer = networkServer;
-            networkServer.AddNetworkClient(this);
         }
 
         private void Disconnect(Exception disconnectException)

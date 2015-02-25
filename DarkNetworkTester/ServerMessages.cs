@@ -38,10 +38,13 @@ namespace DarkNetworkTester
 
         public void DisconnectCallback(NetworkClient<TrackingObject> client, Exception disconnectException)
         {
-            Console.WriteLine("Server: ID " + client.stateObject.thisID + " disconnected from " + client.stateObject.remoteEndpoint);
-            if (disconnectException != null)
+            if (disconnectException == null)
             {
-                Console.WriteLine("Server: ID " + client.stateObject.thisID + " disconnected from " + client.stateObject.remoteEndpoint + ", error: " + disconnectException);
+                Console.WriteLine("Server: ID " + client.stateObject.thisID + " disconnected from " + client.stateObject.remoteEndpoint);
+            }
+            else
+            {
+                Console.WriteLine("Server: ID " + client.stateObject.thisID + " disconnected from " + client.stateObject.remoteEndpoint + ", error: " + disconnectException.Message);
             }
         }
     }
