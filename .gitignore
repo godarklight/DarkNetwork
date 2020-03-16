@@ -5,5 +5,8 @@ DarkNetwork/bin/*
 DarkNetwork/obj/*
 DarkNetworkTester/bin/*
 DarkNetworkTester/obj/*
+DotNet/bin/*
+DotNet/obj/*
 *.suo
 *.csproj.user
+.vs/

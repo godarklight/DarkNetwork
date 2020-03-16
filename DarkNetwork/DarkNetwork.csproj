@@ -7,7 +7,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>DarkNetwork</RootNamespace>
     <AssemblyName>DarkNetwork</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
