@@ -32,7 +32,7 @@ namespace DarkNetwork
         public void Start(IPEndPoint bindAddress)
         {
             tcpListener = new TcpListener(bindAddress);
-#if NETCOREAPP
+#if NETCORE
             if (bindAddress.Address == IPAddress.IPv6Any)
             {
                 tcpListener.Server.DualMode = true;
